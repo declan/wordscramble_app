@@ -3,8 +3,30 @@
       <meta http-equiv="content-type" content="text/html; charset=UTF-8">
       <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.min.css">
       <link rel="stylesheet" type="text/css" href="/stylesheets/wordscramble.css">
+      <title>Word Scramble</title>
     </head>
     <body>
-        Hello grapes.
+        <div class="container">
+            <div class="row">
+                <h1 class="span4">Word Scramble</h1>
+            </div>
+
+            <div class="row">
+                <p class="span5">
+                    This is a simple JSON api to descramble strings into English words.
+                    It is written in <a href="https://github.com/intridea/grape">Grape</a>,
+                    and this is the <a href="https://github.com/declan/wordscramble_app">source</a>.
+                </p>
+            </div>
+
+            <div class="row">
+                <pre class="span5">
+curl http://wordscramble.io/descramble/realapin.json
+
+# => ["airplane", ... ]
+                </pre>
+            </div>
+
+        </div>
     </body>
 </html>
