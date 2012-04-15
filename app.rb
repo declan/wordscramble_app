@@ -16,6 +16,7 @@ module WordScramble
 
   App = Rack::Cascade.new([
     Rack::File.new("public/index.html"),
+    Rack::File.new("public"),
     WordScramble::API
     ])
 end
