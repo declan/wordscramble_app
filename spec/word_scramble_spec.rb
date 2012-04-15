@@ -14,7 +14,7 @@ describe "Word Scramble App" do
 
   describe "/descramble" do
     it "returns a list of words" do
-      get '/descramble/realapin'
+      get '/descramble/realapin.json'
       last_response.body.should match("airplane")
     end
   end

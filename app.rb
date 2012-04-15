@@ -4,7 +4,8 @@ require 'grape'
 require 'word_scramble'
 
 module WordScramble
-  class App < Grape::API
+  class API < Grape::API
+    default_format :json
 
     get '/descramble/:word' do
       descrambler = WordScramble::Descrambler.new(params[:word])
@@ -12,4 +13,9 @@ module WordScramble
     end
 
   end
+
+  App = Rack::Cascade.new([
+    Rack::File.new("public/index.html"),
+    WordScramble::API
+    ])
 end
