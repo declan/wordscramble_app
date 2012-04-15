@@ -1,8 +1,10 @@
 source 'http://rubygems.org'
 
-gem 'word_scramble'
+gem 'rack'
 gem 'grape'
+gem 'word_scramble'
 
-group :development do
+group :development, :test do
   gem 'rspec'
+  gem 'rack-test'
 end

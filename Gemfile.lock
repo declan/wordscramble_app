@@ -14,6 +14,8 @@ GEM
     rack (1.4.1)
     rack-mount (0.8.3)
       rack (>= 1.0.0)
+    rack-test (0.6.1)
+      rack (>= 1.0)
     rspec (2.9.0)
       rspec-core (~> 2.9.0)
       rspec-expectations (~> 2.9.0)
@@ -29,5 +31,7 @@ PLATFORMS
 
 DEPENDENCIES
   grape
+  rack
+  rack-test
   rspec
   word_scramble
