@@ -8,20 +8,31 @@
     <body>
         <div class="container">
             <div class="row">
-                <h1 class="span4">Word Scramble</h1>
+                <h1 class="span7">Word Scramble</h1>
             </div>
 
             <div class="row">
-                <p class="span5">
+                <p class="span7">
                     This is a simple JSON api to descramble strings into English words.
                     It is written in <a href="https://github.com/intridea/grape">Grape</a>,
-                    and this is the <a href="https://github.com/declan/wordscramble_app">source</a>.
+                    and you can see the source 
+                    <a href="https://github.com/declan/wordscramble_app">here</a>.
+                </p>
+            </div>
+            <div class="row">
+                <p class="span7">
+                     You can access the api at 
+                     <code>/descramble/:scrambled_string(.json)</code>.
+                     You'll get back an array of matching words. 
                 </p>
             </div>
 
             <div class="row">
-                <pre class="span5">
-curl http://wordscramble.io/descramble/realapin.json
+                <h2 class="span7">Example</h2>
+            </div>
+            <div class="row">
+                <pre class="span7">
+curl http://smooth-stream-5874.herokuapp.com/descramble/realapin.json
 
 # => ["airplane", ... ]
                 </pre>
