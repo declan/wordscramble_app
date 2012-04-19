@@ -1,0 +1,8 @@
+#scrambled_input {
+    height: 32px;
+}
+
+.hidden {
+    position: absolute;
+    left: -9999px;
+}

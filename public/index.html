@@ -3,13 +3,17 @@
       <meta http-equiv="content-type" content="text/html; charset=UTF-8">
       <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.min.css">
       <link rel="stylesheet" type="text/css" href="/stylesheets/wordscramble.css">
+      <script type="text/javascript" src="/javascripts/jquery-1.7.2.min.js"></script>
+      <script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>
+      <script type="text/javascript" src="/javascripts/ember-0.9.7.1.js"></script>
+      <script type="text/javascript" src="/javascripts/app.js"></script>
       <title>Word Scramble</title>
     </head>
     <body>
         <div class="container">
             <p> <div class="row">
                 <h1 class="span7">Word Scramble</h1>
-           </div> </p> 
+            </div> </p> 
 
             <div class="row">
                 <p class="span7">
@@ -19,10 +23,36 @@
                     <a href="https://github.com/declan/wordscramble_app">here</a>.
                 </p>
             </div>
+
             <div class="row">
+                <h2 class="span7">Give it a try!</h2>
+            </div>
+
+            <div class="row">
+                <form class="span7 well form-inline">
+                    <input type="text" id="scrambled_input" class="input-medium">
+                    <button id="scrambled_submit" class="btn">De-scramble</button>
+                    <span class="help-inline muted"><i>Try realapin, liopts, or otauminn</i></span>
+                </form>
+            </div>
+
+            <div class="row">
+                <div id="results" class="well span7 hidden">
+                    <ul>
+                        <script type="text/x-handlebars">
+                            {{#each App.resultsController}}
+                                <li>{{this}}</li>
+                            {{/each}}
+                        </script>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row">
+                <h2 class="span7">JSON Api</h2>
                 <p class="span7">
                      You can access the api at 
-                     <code>/descramble/:scrambled_string(.json)</code>.
+                     <code>/descramble/:scrambled_string(.json)</code>
                      You'll get back an array of matching words. 
                 </p>
             </div>
@@ -32,9 +62,9 @@
             </div>
             <div class="row">
                 <pre class="span7">
-curl http://smooth-stream-5874.herokuapp.com/descramble/realapin.json
+curl http://smooth-stream-5874.herokuapp.com/descramble/liopts.json
 
-# => ["airplane", ... ]
+# => ["pilots", "spoilt", "pistol"]
                 </pre>
             </div>
 

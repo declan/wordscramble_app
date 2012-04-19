@@ -7,6 +7,8 @@
 
 require File.expand_path('../../app', __FILE__)
 require 'rack/test'
+require 'capybara/rspec'
+Capybara.app = WordScramble::App
 
 RSpec.configure do |config|
   config.treat_symbols_as_metadata_keys_with_true_values = true

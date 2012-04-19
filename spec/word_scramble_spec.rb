@@ -5,10 +5,19 @@ describe "Word Scramble App" do
     @app ||= WordScramble::App
   end
 
-  describe "home page" do
+  describe "home page", :type => :request do
     it "doesn't crash" do
       get '/'
       last_response.status.should == 200
+    end
+
+    it "lets you descramble words" do
+      visit '/'
+      fill_in "scrambled_input", :with => "liopts"
+      click_on "De-scramble"
+      page.should have_content("pilots")
+      page.should have_content("spoilt")
+      page.should have_content("pistol")
     end
   end
 
